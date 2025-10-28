@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //204. Count Primes
 
 class Solution {
@@ -16,4 +17,24 @@ class Solution {
 
         return count;
     }
+=======
+//204. Count Primes
+
+class Solution {
+    public int countPrimes(int n) {
+        boolean[] isComposite = new boolean[n+1];
+        int count = 0;
+
+        for(int i=2;i<n;i++){
+            if(!isComposite[i]){
+                count++;
+                for(int j=i*2;j<n;j+=i){
+                    isComposite[j]=true;
+                }
+            }
+        }
+
+        return count;
+    }
+>>>>>>> be6ce0b427078b1421d5dd74adb2300dc02daeec
 }

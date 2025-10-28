@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //2351. First Letter to Appear Twice
 
 class Solution {
@@ -9,4 +10,17 @@ class Solution {
         }
         return '0';
     }
+=======
+//2351. First Letter to Appear Twice
+
+class Solution {
+    public char repeatedCharacter(String s) {
+        int[] seen = new int[26];
+        for(int i=0;i<s.length();i++){
+            if(seen[s.charAt(i) - 'a']==1) return s.charAt(i);
+            seen[s.charAt(i) - 'a']++;
+        }
+        return '0';
+    }
+>>>>>>> be6ce0b427078b1421d5dd74adb2300dc02daeec
 }

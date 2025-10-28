@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //412. Fizz Buzz
 
 class Solution {
@@ -19,3 +20,26 @@ class Solution {
         return answer;
     }
 }
+=======
+//412. Fizz Buzz
+
+class Solution {
+    public List<String> fizzBuzz(int n) {
+        List<String> answer = new ArrayList<>();
+        
+        for (int i = 1; i <= n; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                answer.add("FizzBuzz");
+            } else if (i % 3 == 0) {
+                answer.add("Fizz");
+            } else if (i % 5 == 0) {
+                answer.add("Buzz");
+            } else {
+                answer.add(Integer.toString(i));
+            }
+        }
+
+        return answer;
+    }
+}
+>>>>>>> be6ce0b427078b1421d5dd74adb2300dc02daeec

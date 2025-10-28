@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //220. Contains Duplicate III
 
 class Solution {
@@ -14,4 +15,22 @@ class Solution {
         }
         return false;
     }
+=======
+//220. Contains Duplicate III
+
+class Solution {
+    public boolean containsNearbyAlmostDuplicate(int[] nums, int indexDiff, int valueDiff) {
+        TreeSet<Long> set = new TreeSet<>();
+        for(int i=0;i<nums.length;i++){
+            long num = nums[i];
+            Long ceiling = set.ceiling(num);
+            if(ceiling != null && ceiling - num <= valueDiff) return true;
+            Long floor = set.floor(num);
+            if(floor != null && num - floor <= valueDiff) return true;
+            set.add(num);
+            if(i >= indexDiff) set.remove((long)nums[i - indexDiff]);
+        }
+        return false;
+    }
+>>>>>>> be6ce0b427078b1421d5dd74adb2300dc02daeec
 }

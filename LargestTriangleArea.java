@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //812. Largest Triangle Area
 
 class Solution {
@@ -17,4 +18,25 @@ class Solution {
         }
         return maxArea;
     }
+=======
+//812. Largest Triangle Area
+
+class Solution {
+    public double largestTriangleArea(int[][] points) {
+        double maxArea = 0.0;
+        for(int i=0;i<points.length;i++){
+            for(int j=i+1;j<points.length;j++){
+                for(int k=j+1;k<points.length;k++){
+                    double area = Math.abs(
+                        points[i][0] * (points[j][1] - points[k][1]) +
+                        points[j][0] * (points[k][1] - points[i][1]) +
+                        points[k][0] * (points[i][1] - points[j][1])
+                    ) / 2.0;
+                    maxArea = Math.max(area, maxArea);
+                }
+            }
+        }
+        return maxArea;
+    }
+>>>>>>> be6ce0b427078b1421d5dd74adb2300dc02daeec
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //415. Add Strings
 
 class Solution {
@@ -15,4 +16,23 @@ class Solution {
         }
         return result.reverse().toString();
     }
+=======
+//415. Add Strings
+
+class Solution {
+    public String addStrings(String num1, String num2) {
+        StringBuilder result = new StringBuilder();
+        int i = num1.length() - 1;
+        int j = num2.length() - 1;
+        int carry =0;
+        while(i>=0 || j>=0 || carry!=0){
+            int n1 = (i>=0)? num1.charAt(i--) - '0' : 0;
+            int n2 = (j>=0)? num2.charAt(j--) - '0' : 0;
+            int sum = n1 + n2 + carry;
+            result.append(sum % 10);
+            carry = sum / 10;
+        }
+        return result.reverse().toString();
+    }
+>>>>>>> be6ce0b427078b1421d5dd74adb2300dc02daeec
 }
